@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Pathway Extreme", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#ffb199;
+    height: 100vh;
+    background-image:
+    radial-gradient(at 36% 4%, hsla(39,93%,78%,1) 0px, transparent 50%),
+    radial-gradient(at 19% 7%, hsla(14,83%,61%,1) 0px, transparent 50%),
+    radial-gradient(at 48% 8%, hsla(54,61%,60%,1) 0px, transparent 50%),
+    radial-gradient(at 86% 52%, hsla(354,94%,60%,1) 0px, transparent 50%);
+}
+
+.reg-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    gap: 20px;
+}
+
+.reg-form > *{
+    flex: 1;
+}
+
+.info-container{
+    text-align: center;
+}
+
+.info-container h1{
+    padding: 20px;
+    font-size: 2rem;
+    color: #fb8561;
+}
+
+.info-container p{
+    padding: 20px;
+    font-size: 1rem;
+    color: #ffb199;
+}
+
+
+
+.inputbox{
+    display: grid;
+    padding: 10px;
+}
+
+.inputbox input{
+    padding: 10px;
+    border: 2px solid #ffb199;
+    border-radius: 10px;
+    outline: none;
+    color: #ffb199;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.inputbox span{
+    position: absolute;
+    color: #ffb199;
+    pointer-events: none;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span{
+    background-color: #ffb199;
+    color: white;
+    font-size: 0.80rem;
+    padding: 2px;
+    border-radius: 4px;
+    transform: translateX(10px) translateY(-9px);
+    transition: 0.3s;
+}
+
+.submit-btn{
+    width: 150px;
+    padding: 15px;
+    border: 0;
+    background-color: #fb8561;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: white;
+}
+
+.submit-btn:hover{
+    background-color:#ff916f;
+}
+
+.submit-btn:active{
+    background-color:#ffb199;
+}
