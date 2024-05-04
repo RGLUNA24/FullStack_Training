@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- navigation bar sample -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar w/ text</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+ <div id="mydiv1" class="group1">
+    Hello World 1
+ </div>
+
+ <div id="mydiv2" class="group1">
+    Hello World 2
+ </div>
+
+
+ <div id="mydiv3" class="group1">
+    Hello World 3
+ </div>
+
+ <input type="text" id="firstname" value="allen">
+
+
+ <input type="radio" id="genderMale" value="Male" name="gender" checked> Male
+ 
+ <input type="radio" id="Female" value="Female" name="gender"> Female
+
+ <div id="mydiv4" class="group1">
+   
+ </div>
+
+
+<script type="application/javascript">
+
+    //const thediv = document.getElementById('mydiv4');
+
+
+    let creatediv = document.createElement("div");
+    creatediv.textContent = 'Dragon Ball';
+    creatediv.style="background-color:blue;padding:10px;"
+    creatediv.id = 'DragonID';
+
+    let createButton = document.createElement("button");
+    createButton.textContent = 'Hunter X Hunter';
+    createButton.style="background-color:green;padding:10px;"
+    createButton.id = 'ButtonID';
+
+    const thebody = document.getElementsByTagName('body')[0];
+
+        thebody.appendChild(creatediv);
+        thebody.appendChild(createButton);
+
+    const theButton = document.getElementById('ButtonID');
+        theButton.addEventListener('click', function(){
+            const theDragon = document.getElementById('DragonID');
+            theDragon.style = "background-color:red;padding:10px;"
+        });
+
+    //remove element
+    //document.getElementById('DragonID').remove();
+
+
+
+
+    // thediv.innerHTML = `
+    //     <h1>This is my First Letter</h1>
+    //     <p>I am creating an inner HTML</p>
+    //     <button>Have a nice Day!</button>
+    // `;
+
+
+
+    // const theDiv = document.getElementById('mydiv2');
+
+    // theDiv.style = 'background-color:blue; font-size: 23px;';
+
+    // const bootDiv = document.getElementsByClassName('group1')[2];
+
+    // bootDiv.className = ('group1 bg-success p-4');
+
+
+    // const selectTextbox = document.getElementById('firstname');
+
+    // selectTextbox.readOnly = true;
+
+    // document.write(selectTextbox.value);
+
+
+    // selectTextbox.value = 'Michael';
+
+    // if(selectTextbox.value == 'Allen')
+    // {
+    //     document.write("This is my name");
+    // }
+    // else 
+    // {
+    //     document.write("Not my name");
+    // }
+
+    // const genderMale = document.getElementById('genderMale');
+
+    // genderMale.checked = false;
+
+
+    // if(genderMale.checked == true)
+    // {
+    //     document.write("gender Male");
+    // }
+    // else 
+    // {
+    //     document.write("gender Female");
+    // }
+// let thedivs = document.getElementsByTagName('div')[1];
+
+// document.write(thedivs.outerText);
+
+
+// const thedivs2 = document.querySelectorAll(".group1")[2];
+
+// document.write(thedivs2.outerText);
+
+//let thediv = document.getElementById('mydiv');
+
+//console.dir(thediv);
+
+//document.write(thediv.outerText);
+</script>    
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 9</title>
+</head>
+<body>
+
+    <div id="container1"></div>   
+    <div id="container2"></div>
+    <div id="container3"></div>
+    
+
+    <!-- JAVASCRIPT CODE BELOW -->
+    <script type="application/javascript">
+
+        // -------------------------Synchronous Function
+
+        /*
+        for(let x=0;x<5005000000;x++)
+            {
+
+            }
+        document.getElementById('container1').innerHTML = 'STARTING';
+        document.getElementById('container2').innerHTML = 'WORKING';
+        */
+
+        // -------------------------ASYNCHRONOUS Function
+        
+        /*
+        setTimeout(function(){
+            for(let x=0;x<5005000000;x++)
+                {
+                }
+            },1000);
+      
+        document.getElementById('container1').innerHTML = 'STARTING';
+        document.getElementById('container2').innerHTML = 'WORKING';
+        */
+
+        // --------------------WITH OUT CALL BACK
+        /*
+        let x = 'this is...';
+        function theasyncfunction(){
+            setTimeout(function(){
+                x = 'this is the asynchronous';
+            },5000);
+        }
+
+        function thewrite(){
+            document.getElementById('container1').innerHTML = "RESULT:" + x;
+        }
+        theasyncfunction();
+        thewrite();
+        */
+
+                // --------------------WITH CALL BACK
+       
+        /*
+        let x = 'this is...';
+        function theasyncfunction(displayit){
+            setTimeout(function(){
+                x = 'this is the asynchronous';
+                displayit();
+            },5000);
+        }
+
+        function thewrite(){
+            document.getElementById('container1').innerHTML = "RESULT:" + x;
+        }
+        theasyncfunction(thewrite);
+        thewrite();
+        */
+
+        //-----------------------CALL BACK HELL
+        /*
+        let x = '';
+
+        function thefirstdisplay(thewrite) {
+            setTimeout(function(){
+                x = 'this...';
+                thewrite();
+
+                    setTimeout(function(){
+                        x = 'this is the...';
+                        thewrite();
+
+                            setTimeout(function(){
+                                x = 'this is the complete...';
+                                thewrite();
+
+                                setTimeout(function(){
+                                    x = 'this is the complete sentence!';
+                                    thewrite();
+                                },5000);
+                            },5000);
+                    },5000);
+
+            },5000);
+        }
+
+
+        function thewrite() {
+            document.getElementById('container1').innerHTML = "Result: " + x +'<br><br><br>'
+        }
+
+        thefirstdisplay(thewrite);
+        
+
+        // -------------------------- PROMISES
+        let x = '';
+        function thefirstdisplay() 
+        { 
+            return new Promise((resolve,reject) => {
+                setTimeout(function() {
+                x = 'this...';
+                thewrite();
+                resolve();
+                }, 2000);
+            });
+        }
+        
+        function theseconddisplay() 
+        { 
+            return new Promise((resolve,reject) => {
+                setTimeout(function() {
+                x = 'this is...';
+                thewrite();
+                resolve();
+                }, 2000);
+            });
+        }
+
+        function thethirddisplay() 
+        { 
+            return new Promise((resolve,reject) => {
+                setTimeout(function() {
+                x = 'this is the...';
+                thewrite();
+                resolve();
+                }, 2000);
+            });
+        }
+
+        function thefourthdisplay() 
+        { 
+            return new Promise((resolve,reject) => {
+                setTimeout(function() {
+                x = 'this is the complete...';
+                thewrite();
+                resolve();
+                }, 2000);
+            });
+        }
+
+        function thefifthdisplay() 
+        { 
+            return new Promise((resolve,reject) => {
+                setTimeout(function() {
+                x = 'this is the complete sentence!';
+                thewrite();
+                resolve();
+                }, 2000);
+            });
+        }
+
+        function thewrite() {
+            document.getElementById('container1').innerHTML = "Result: " + x + '<br><br><br>';
+        }
+
+        thefirstdisplay()
+            .then(() => theseconddisplay())
+            .then(() => thethirddisplay())
+            .then(() => thefourthdisplay())
+            .then(() => thefifthdisplay());
+        */
+
+    // ASYCN AWAIT
+
+    let x = "";
+    
+      function thefirstdisplay() {
+        return new Promise((resolve, reject) => {
+          setTimeout(function () {
+            x = "this...";
+            thewrite();
+            resolve();
+          }, 2000);
+        });
+      }
+
+      function theseconddisplay() {
+        return new Promise((resolve, reject) => {
+          setTimeout(function () {
+            x = "this is...";
+            thewrite();
+            resolve();
+          }, 2000);
+        });
+      }
+
+      function thethirddisplay() {
+        return new Promise((resolve, reject) => {
+          setTimeout(function () {
+            x = "this is the...";
+            thewrite();
+            resolve();
+          }, 2000);
+        });
+      }
+
+      function thefourthdisplay() {
+        return new Promise((resolve, reject) => {
+          setTimeout(function () {
+            x = "this is the complete...";
+            thewrite();
+            resolve();
+          }, 2000);
+        });
+      }
+
+      function thefifthdisplay() {
+        return new Promise((resolve, reject) => {
+          setTimeout(function () {
+            x = "this is the complete sentence!";
+            thewrite();
+            reject('Wrong username');
+          }, 2000);
+        });
+      }
+
+      function thewrite() {
+        document.getElementById("container1").innerHTML =
+          "Result: " + x + "<br><br><br>";
+      }
+
+      async function run() {
+        try {
+          await thefirstdisplay();
+          await theseconddisplay();
+          await thethirddisplay();
+          await thefourthdisplay();
+          await thefifthdisplay();
+        } catch (error) {
+          document.getElementById("container1").innerHTML = "Error: " + error;
+        }
+      }
+
+      run();
+
+    </script>
+</body>
+</html>

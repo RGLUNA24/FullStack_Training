@@ -1,132 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>kahitsinoprogrammer.com</title>
-    <link rel="stylesheet" href="style.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/8b36788fea.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="/images/logowhite.png">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/8b36788fea.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/x-icon" href="logowhite.png" />
     <style>
-      .about{
+      .about {
         text-decoration: none;
       }
 
-      .about:hover{
+      .about:hover {
         text-decoration: underline;
       }
 
-      .hov-nav:hover{
+      .hov-nav:hover {
         color: rgba(0, 0, 255, 0.6);
         transition: 0.5s;
       }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- NAVIGATION BAR -->
-    <nav class="navbar navbar-expand-md" style="background-color: #487e94;">
-        <div class="container" style="max-width: 1200px;">
+    <nav class="navbar navbar-expand-md" style="background-color: #487e94">
+      <div class="container" style="max-width: 1200px">
+        <a class="navbar-brand py-4" href="#"
+          ><img src="Logo.webp" alt="Logo" style="width: 100px; height: 100px"
+        /></a>
 
-          <a class="navbar-brand py-4" href="#"><img src="/images/Logo.webp" alt="Logo" style="width: 100px; height: 100px;"></a>
+        <button
+          class="navbar-toggler border-0 bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarText"
+          aria-controls="navbarText"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <button class="navbar-toggler border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active text-light mx-3" style="font-size: 1.2rem;" aria-current="page" href="index.html"><span class="hov-nav">Home</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light mx-3" style="font-size: 1.2rem;" href="about.html"><span class="hov-nav">About</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light mx-3" style="font-size: 1.2rem;" href="blog.html"><span class="hov-nav">Blog</span></a>
-              </li>
-            </ul>
-          </div>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarText"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-light mx-3"
+                style="font-size: 1.2rem"
+                aria-current="page"
+                href="index.html"
+                ><span class="hov-nav">Home</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-light mx-3"
+                style="font-size: 1.2rem"
+                href="about.html"
+                ><span class="hov-nav">About</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-light mx-3"
+                style="font-size: 1.2rem"
+                href="blog.html"
+                ><span class="hov-nav">Blog</span></a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
+    <!-- BLOG SECTION -->
+    <section style="padding-top: 50px; padding-bottom: 30px">
+      <div class="container pt-4" style="max-width: 1200px">
+        <i class="fa-solid fa-calendar-check pb-3">
+          <span style="font-size: 13px; letter-spacing: 1px"
+            >FEBRUARY 14, 2024</span
+          ></i
+        >
+        <h3 class="fw-bold">The Power Of Spreadsheet</h3>
+        <div class="card my-5">
+          <img src="blogs.webp" class="card-img-top" alt="Blogs" />
+          <div class="card-body">
+            <p class="card-text">
+              Kadalasan kapag may nagtatanong sa akin kung paano magsisimula sa
+              pagcocode, isa sa mga sinasagot ko is "Familiarize yourself using
+              spreadsheet." Be it Microsoft, G-Sheet, or any apps, because using
+              the functionalities of these softwares are almost similar to the
+              functionalities of programming.<br /><br />
 
-      <!-- BLOG SECTION -->
-      <section style="padding-top: 50px;padding-bottom: 30px;">
-        <div class="container pt-4" style="max-width: 1200px;">
-            <i class="fa-solid fa-calendar-check pb-3"> <span style="font-size: 13px;letter-spacing: 1px;">FEBRUARY 14, 2024</span></i>
-            <h3 class="fw-bold">The Power Of Spreadsheet</h3>
-            <div class="card my-5">
-                
-                <img src="/images/blogs.webp" class="card-img-top" alt="Blogs">
-                <div class="card-body">
+              Sa Spreadsheet, matutunan mo kung paano naghahandle,
+              nagfo-formulate at nag-peprepare ng data. Halos dito naman umiikot
+              ang website or web apps, kaya tayo nagdedevelop ay para
+              mag-collect, mag-organize at mag-store ng data. Kaya kapag gusto
+              mong i-assess ang sarili mo kung gusto mo talaga mag-code,
+              learning how to fully utilize the spreadsheet would be a good
+              starting point.<br />
 
-                    <p class="card-text">Kadalasan kapag may nagtatanong sa akin kung paano magsisimula sa pagcocode, isa sa mga        sinasagot ko is "Familiarize yourself using spreadsheet." Be it Microsoft, G-Sheet, or any apps, because using the functionalities of these softwares are almost similar to the functionalities of programming.<br><br>
+              --<br />
 
-                    Sa Spreadsheet, matutunan mo kung paano naghahandle, nagfo-formulate at nag-peprepare ng data. Halos dito naman umiikot ang website or web apps, kaya tayo nagdedevelop ay para mag-collect, mag-organize at mag-store ng data. Kaya kapag gusto mong i-assess ang sarili mo kung gusto mo talaga mag-code, learning how to fully utilize the spreadsheet would be a good starting point.<br>
-                        
-                    --<br>
-                        
-                     Photo by Scott Graham on Unsplash</p>
-
-                </div>
-            </div>
-        </div>  
-      </section>
- 
-
-      <!-- SECTION 5 -->
-      <section style="background-color: #3583c8c5;padding-top: 60px;padding-bottom: 60px;">
-        <div class="container" style="max-width: 1200px;">
-          <div class="row justify-content-between align-items-center g-5">
-            <div class="col-md-5">
-              <h3 class="fw-bold" style="color: white;">
-                MAY TANONG KA BA?
-              </h3>
-              <p style="color: white;font-size: 18px;">
-                Pwede mo akong tanungin tungkol sa coding, love life at iba pa. Huwag lang tungkol sa pera :)
-              </p>
-            </div>
-            <div class="col-md-5">
-              <i class="fas fa-envelope ps-4" style="font-size: 80px;color: #8e5a41;"></i>
-              <p style="color: white;font-size: 18px;">
-                adbata26@gmail.com
-              </p>
-            </div>
+              Photo by Scott Graham on Unsplash
+            </p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SECTION 6 -->
-      <section style="background-color: white;padding-top: 60px;padding-bottom: 60px;">
-        <div class="container" style="max-width: 1200px;">
-          <div class="row justify-content-between align-items-center g-5">
-            <div class="col-md-5">
-              <img src="/images/logowhite.png" alt="logo" style="width: 50px">
-              <p style="font-size: 18px;">
-                Ang pinaka-goal ko ay gawing common ang programming na para bang naglalaro ka ng chess o nag-aaral magtanim ng halaman!
-              </p>
-            </div>
-            <div class="col-md-5">
-              <p style="color: #487e94;font-size: 23px; font-weight: bold;">Contact Me</p>
-              <p style="color:#487e94;font-size: 18px;">
-                adbata26@gmail.com
-              </p>
-              <a href="https://facebook.com/" target="_blank"><img src="/images/FB.webp" alt="Facebook" style="width: 35px;"></a>
-            </div>
+    <!-- SECTION 5 -->
+    <section
+      style="
+        background-color: #3583c8c5;
+        padding-top: 60px;
+        padding-bottom: 60px;
+      "
+    >
+      <div class="container" style="max-width: 1200px">
+        <div class="row justify-content-between align-items-center g-5">
+          <div class="col-md-5">
+            <h3 class="fw-bold" style="color: white">MAY TANONG KA BA?</h3>
+            <p style="color: white; font-size: 18px">
+              Pwede mo akong tanungin tungkol sa coding, love life at iba pa.
+              Huwag lang tungkol sa pera :)
+            </p>
+          </div>
+          <div class="col-md-5">
+            <i
+              class="fas fa-envelope ps-4"
+              style="font-size: 80px; color: #8e5a41"
+            ></i>
+            <p style="color: white; font-size: 18px">adbata26@gmail.com</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- FOOTER -->
-      <footer style="background-color: #41758e;">
-        <div class="container text-center">
-          <p class="py-4 mb-0" style="color: white;">
-            © Copyright 2024. Kahit Sino Programmer. All rights reserved.
-          </p>
+    <!-- SECTION 6 -->
+    <section
+      style="background-color: white; padding-top: 60px; padding-bottom: 60px"
+    >
+      <div class="container" style="max-width: 1200px">
+        <div class="row justify-content-between align-items-center g-5">
+          <div class="col-md-5">
+            <img src="logowhite.png" alt="logo" style="width: 50px" />
+            <p style="font-size: 18px">
+              Ang pinaka-goal ko ay gawing common ang programming na para bang
+              naglalaro ka ng chess o nag-aaral magtanim ng halaman!
+            </p>
+          </div>
+          <div class="col-md-5">
+            <p style="color: #487e94; font-size: 23px; font-weight: bold">
+              Contact Me
+            </p>
+            <p style="color: #487e94; font-size: 18px">adbata26@gmail.com</p>
+            <a href="https://facebook.com/" target="_blank"
+              ><img src="FB.webp" alt="Facebook" style="width: 35px"
+            /></a>
+          </div>
         </div>
-      </footer>
+      </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <!-- FOOTER -->
+    <footer style="background-color: #41758e">
+      <div class="container text-center">
+        <p class="py-4 mb-0" style="color: white">
+          © Copyright 2024. Kahit Sino Programmer. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

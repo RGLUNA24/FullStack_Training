@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson 10</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section style="width: 900px;">
+      <div class="container-lg">
+        <div class="display-5 text-center fw-bold text-light">
+            FULLSTACK Web Development
+        </div>
+        <div class="lead text-warning text-center pb-4">Javascript to PHP and vice-versa</div>
+        <div class="activity p-4 shadow rounded-4 bg-body-secondary">
+            <div class="row justify-content-center py-5 g-5">
+                <div class="col-md-5">
+                    <label for="username" class="form-label">Username</label>
+                    <div class="input-group flex-nowrap mb-3">
+                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-file-person-fill"></i></i></span>
+                        <input type="text" class="form-control" id="username" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+
+                    <label for="password" class="form-label">Password</label>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping2"><i class="bi bi-file-lock2-fill"></i></i></span>
+                        <input type="password" class="form-control" id="password" aria-label="Username" aria-describedby="addon-wrapping2">
+                    </div>
+
+                    <div class="mb-3 pt-4">
+                        <small>Fill-out, click <span class="fw-bold fst-italic">Sumbit</span> or <span class="fw-bold fst-italic">Press Enter</span>.</small><br>
+                        <button class="btnSubmit btn btn-warning py-2 mt-3" id="submitBtn">Submit</button>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+
+                    <table class="table table-striped table-hover text-center">
+
+                        <thead>
+                          <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">Password</th>
+                          </tr>
+                        </thead>
+
+                        <tbody id="taskList"></tbody>
+                      </table>
+
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+<!-- JAVASCRIPT CODE BELOW -->
+
+<script type="application/javascript">
+
+const submitRequest = function() {
+
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    const table = document.getElementById('taskList');
+
+    let thedata = {
+        username: username,
+        password: password
+    }
+
+    let FDa = new FormData();
+    FDa.append("whole", JSON.stringify(thedata));
+
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+            //check 1st if username and password is not empty.
+            if (username !== "" && password !== ""){
+
+                //create a row and cells
+                const row = table.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+
+                //php response is a string, we need to split the response.
+                let responseSplitter = this.responseText.split(" ");
+
+                //index 0 is the username and index 1 is the password from responseSplitter array.
+                cell1.innerHTML = responseSplitter[0];
+                cell2.innerHTML = responseSplitter[1];
+
+                //clear the display of the inputs.
+                document.getElementById('username').value = "";
+                document.getElementById('password').value = "";
+            }else{
+                alert('Please input your Username and Password.');
+            }
+        }
+    };
+    xmlhttp.open("POST", "lesson10.php?PH=" + Date.now(), true);
+    xmlhttp.send(FDa); 
+};
+    document.getElementById("submitBtn").addEventListener("click", submitRequest);
+
+    document.getElementById("password").addEventListener("keypress", function(e){
+        console.log(e);
+        if(e.key === "Enter"){
+            submitRequest();
+        }
+    });
+</script>      
+</body>
+</html>

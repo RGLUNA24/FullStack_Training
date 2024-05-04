@@ -1,0 +1,25 @@
+.hidden {
+  opacity: 0;
+  transition: all 1s;
+}
+
+.testimony {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.testimony:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.testimony:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.show {
+  filter: blur(0);
+  transform: translateX(0);
+  opacity: 1;
+}
